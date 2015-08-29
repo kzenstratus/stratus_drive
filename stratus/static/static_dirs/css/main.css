@@ -1,0 +1,239 @@
+* {
+	margin: 0;
+	padding: 0;
+    font: Impact;
+
+}
+
+#html {
+    max-width: 100%;
+}
+
+#container {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+}
+
+#logo {
+	float: left;
+	width: 10%;
+    height: 60px;
+	padding-left: 15px;
+}
+
+#logo img {
+	float: right;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#head1 {
+	text-align: left;
+	padding-left: 10px;
+	font-size: x-large;
+	width: 65%;
+    float: left;
+    color: white;
+
+}
+
+#head2 {
+    width: 15%;
+	text-align: center;
+	float: left;
+    margin: 0 1.5%;
+    padding-top: 18px;
+    height: 60px;
+}
+#head3 {
+    width: 15%;
+    text-align: center;
+    float: left;
+    margin: 0 1.5%;
+/*    padding-top: 18px;
+*/    height: 60px;
+}
+
+.hovered {
+    background-color: #3299CC;
+}
+
+#menu {
+    display: none;
+    background-color: #3299CC;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: absolute;
+    width: inherit;
+}
+
+#menuhead {
+    color: white;
+    font-size: 20px;
+}
+
+#menuhead ul {
+    display: none;
+}
+
+#menu li {
+    margin: 0 0 2px 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+	list-style-type: none;
+	text-decoration: none;
+	padding: 0;
+}
+
+#page {
+    position: relative;
+}
+
+#plus2 {
+    float: right;
+    padding-top: 7px;
+    margin-right: 7px;
+
+}
+
+#plus:hover > h5, #plus2:hover > h5 {
+    color: #3299CC;
+}
+
+#content {
+	float: left;
+	margin: 0 20px;
+    margin-top: 40px; 
+	height: 500px;
+	width: 88%;
+	border: 1.5px solid DarkGray;
+    background-color: white;
+    overflow: hidden;
+}
+
+#CurrDir {
+	text-align: center;
+    max-height: 100%;
+	width: 40%;
+    float: left;
+}
+
+
+.fimage {
+    width: 90%;
+    height: auto;
+    padding-top: 0;
+    padding-left: 5%;
+    padding-right: 1.5%;
+    vertical-align: center;
+}
+
+.ftext {
+    margin-top: -4px;
+    width: 100%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    text-align: center;
+    vertical-align: center;
+    clear: both;
+}
+
+#contenthead {
+    width: 100%;
+    height: 5%;
+    border-bottom: 1.5px solid DarkGray;
+    padding-bottom: 6.5px;
+}
+
+#back {
+    height: 100%;
+    width: 30%;
+    float: left;
+    padding-left: 2px;
+    margin-top: 3.5px;
+}
+
+#back img {
+    height: 95%;
+}
+
+#home {
+    height: 95%;
+    width: 26.5%;
+    float: left;
+    padding-right: 2px;
+    margin-top: 3.5px;
+}
+
+#home img {
+    float: right;
+    height: 95%;
+}
+
+#explorer {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 15px;
+}
+
+#form {
+    margin-bottom: 10px;
+    float: left;
+    height: 100%;
+    width: 40%;
+}
+
+#form2 {
+    margin-bottom: 10px;
+    float: left;
+    height: 100%;
+    width: 40%;
+}
+
+#trash {
+    float: right;
+    height: 50px;
+    width: 50px;
+    margin-right: 40px;
+    margin-top: 490px;
+}
+
+#trash img {
+    width: 50px;
+    height: auto;
+}
+
+#forms {
+    height: 20%;
+    position: absolute;
+    width: 100%;
+}
+
+#files {
+    margin-top: ;
+    height: 80%;
+}
+
+.file {
+    width: 150px;
+    height: 20px;
+    display: inline-block;
+    margin: 7px;
+    display: inline;
+    vertical-align: top;
+    float: left;
+}
+
+#uploader {
+    position: absolute;
+    margin-top: -1000px;
+}

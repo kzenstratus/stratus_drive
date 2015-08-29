@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <!-- create header, link all relevant scripts -->
+        <title>Stratus Cloud Management</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+        <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+        <div id="container">
+            <div id="logo">
+                <img src="{% static 'img/cloud.png'%}" />
+            </div>
+            <div id="head1">
+                <h1 id='header'>Stratus</h1>
+            </div>
+  
+            <!-- Create dropdown menu for insite navigation -->
+            <div id="head2">
+                <h3 id = "menuhead">Menu</h3>
+                <ul id="menu">
+                    <li><a href = "{% url 'logout' %}">Log Out</a></li>
+                    <li><a href = "{% url 'register_drives' %}">Register New Account</a></li>
+                </ul>
+            </div>
+        </div>
+    </head>
+
+    <body>
+        <div id ="page">
+
+            <div id= "content">
+                <!-- Create buttons for file navigation and interaction -->
+                <div id="contenthead">
+                    <div id="back"><img src ="{% static 'img/backarrow.jpeg' %}" /></div>
+                    <div id="CurrDir"><h2> {%if user.is_authenticated%}{{user.username}}'s{% endif%} Current Directory</h2></div>
+
+                    <div id="home"><img src ="{% static 'img/home.jpeg' %}" /></div>
+                    <div id="plus2"><h5>+</h5></div>
+                </div>
+                <!-- If file is uploaded through file explorer, append file to home directory -->
+{#                <div id="uploader">#}
+{#                    <form action = 'upload' method = "POST"> {%csrf_token%}#}
+{#                        <input id="files" type="file" multiple onchange="fileinfo()">#}
+{#                        <script>#}
+{#                            function fileinfo(){#}
+{#                                var x = document.getElementById("files");#}
+{#                                var names = [];#}
+{#                                var sizes = [];#}
+{#                                for (var i = 0; i < x.files.length; i++) {#}
+{#                                    var file = x.files[i];#}
+{#                                    names[names.length] = file.name;#}
+{#                                    sizes[sizes.length] = file.size;#}
+{#                                    var node = document.createElement("DIV");#}
+{#                                    var textnode = document.createTextNode(file.name);#}
+{#                                    node.id = file.name;#}
+{#                                    node.className = 'file';#}
+{#                                    node.appendChild(textnode);#}
+{#                                    document.getElementById("explorer").appendChild(node);#}
+{#                                }#}
+{#                            }#}
+{#                        </script>#}
+{#                        <div>#}
+{#                            <input type="submit" value="Send">#}
+{#                        </div>#}
+{#                    </form>#}
+{#                    #}
+{#                </div>#}
+                <div id= "explorer">
+                    <!-- Forms to sort by parent folder, as well as drive location -->
+                    <div id="forms">
+                        <div id='form'>
+{#                          enctype="multipart/form-data"#}
+                            <form action = '/upload/'  method = "POST" >{%csrf_token%}
+                                <label for = "folder_name">Folder Name</label>
+                                    <input type = "text" name = "folder_name" value = "" id = "folder_name"/>
+                                <div>
+                                    <label for = "upload_dir">Upload Directory</label>
+                                        <input type = "text" name = "upload_dir" value = "" id = "upload_dir"/>
+                                </div>
+
+{#                                <input type = "file" name = "file" id = "file" value = "" multiple/>#}
+{#				                {{form.as_p}}#}
+                                <input type="submit" value="Send">
+                            </form>
+                        </div>
+                        <!-- <div id='form2'>
+                            <form action = '/accounts/upload/' method = "POST" >{%csrf_token%} 
+                                <label for = "folder_name">Folder Filter</label>
+                                <input type = "text" name = "folder" value = "" id = "folder"/>
+                                <input type = "submit" value = "Filter"/>
+                            </form>
+                        </div> -->
+                    </div>
+                    <!-- Generate file list from database -->
+                    <div id='files'>
+                        {% for file in file_info %}
+                        <p id= "{{ file.filename }}" class='file'>{{ file.filename }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+          
+
+            </div>
+            <div id="trash">
+                <img src="{% static 'img/trash.png' %}" />
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<html>
+	<!-- Simple header, no menu because the user is not yet logged in -->
+	<head>
+	<title>Stratus Cloud Management</title>
+	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" />
+	    <div id="container">
+	      <div id="logo">
+	        <img src="{% static 'img/cloud.png' %}"  />
+	      </div>
+	      <div id="head1">
+	        <h1 id='header'>Stratus</h1>
+	      </div>
+	</head>
+	<!-- Fields for registration and logging in, depending on whatever is appropriate-->
+	<!-- Simple forms get submitted via Django, and verified via the csrf token -->
+	<body>
+		<div id="Register">
+			<h2>Register New User</h2>
+			<form action = "/gateway/registration" method = "post">{% csrf_token %}
+		   		<label for = "username">Username</label>
+				<input type = "text" name = "username" value = "" id = "username"/>
+				<label for = "password">Password</label>
+				<input type = "password" name = "password1" value = "" id = "password1">
+				<label for = "password">Confirm Password</label>
+				<input type = "password" name = "password2" value = "" id = "password2">
+
+		   		<input type = "submit" value = "Register" />
+	    	</form>
+   		</div>
+   		<div id="Login">
+   			<h2>Log In</h2>
+			{% if form.errors%}
+			<p class = "error">Sorry we do not recognize that username and password</p>
+			{% endif %}
+			<form action = "/gateway/login/" method = "post" >{% csrf_token %}
+				<label for = "username">Username</label>
+				<input type = "text" name = "username" value = "" id = "username"/>
+				<label for = "password">Password</label>
+				<input type = "password" name = "password" value = "" id = "password">
+
+				<input type = "submit" value = "Log In">
+			</form>
+		</div>
+	</body>
+</html>
+

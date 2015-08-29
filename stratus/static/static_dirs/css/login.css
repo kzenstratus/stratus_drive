@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: Impact;
+
+}
+
+#container {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+}
+
+#logo {
+    float: left;
+    width: 10%;
+    height: 60px;
+    padding-left: 15px;
+}
+
+#logo img {
+    float: right;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#head1 {
+    text-align: left;
+    padding-left: 10px;
+    font-size: x-large;
+    width: 75%;
+    float: left;
+    color: white;
+
+}
+
+#head2 {
+    width: 8%;
+    text-align: center;
+    float: left;
+    margin: 0 1.5%;
+    padding-top: 18px;
+    height: 60px;
+}
+
+#Register {
+    float: left;
+    clear: both;
+    width: 285px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    padding-top: 50px;
+}
+
+#Login {
+    float:left;
+    clear: both;
+    width: 285px;
+    margin-left: 50px;
+}
+
+

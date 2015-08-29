@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    font: Impact;
+
+}
+
+#container {
+    background-color: black;
+    width: 100%;
+    height: 60px;
+}
+
+#logo {
+    float: left;
+    width: 10%;
+    height: 60px;
+    padding-left: 15px;
+}
+
+#logo img {
+    float: right;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#head1 {
+    text-align: left;
+    padding-left: 10px;
+    font-size: x-large;
+    width: 65%;
+    float: left;
+    color: white;
+
+}
+
+#form {
+    width: 50%;
+    height: 150px;
+    float: left;
+    margin-left: 50px;
+}
+
+#head2 {
+    width: 15%;
+    text-align: center;
+    float: left;
+    margin: 0 1.5%;
+    padding-top: 18px;
+    height: 60px;
+}
+
+.hovered {
+    background-color: #3299CC;
+}
+
+#menu {
+    display: none;
+    background-color: #3299CC;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    position: absolute;
+    width: inherit;
+}
+
+#menuhead {
+    color: white;
+    font-size: 20px;
+}
+
+#menuhead ul {
+    display: none;
+}
+
+#menu li {
+    margin: 0 0 2px 0;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+}
+
+#dropbox {
+    float: left;
+    clear: both;
+    width: 70%;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+#google {
+    float: left;
+    clear: both;
+    width: 70%;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+#instructions {
+    float: left;
+    margin-left: 50px;
+    width: 70%;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    clear: both;
+
+}
+
+#form > * {
+    margin-bottom: 20px;
+}
+
+#google input {
+    margin-top: 20px;
+}
