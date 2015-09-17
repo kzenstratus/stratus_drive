@@ -1,48 +1,77 @@
 {% load staticfiles %}
+
 <html>
-	<!-- Simple header, no menu because the user is not yet logged in -->
-	<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src = 'js/bootstrap.js'></script>
+<link href = 'bootstrap-3.3.5-dist/css/bootstrap.css' rel= 'stylesheet'>
 	<title>Stratus Cloud Management</title>
-	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	    <link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" />
-	    <div id="container">
-	      <div id="logo">
-	        <img src="{% static 'img/cloud.png' %}"  />
-	      </div>
-	      <div id="head1">
-	        <h1 id='header'>Stratus</h1>
-	      </div>
-	</head>
-	<!-- Fields for registration and logging in, depending on whatever is appropriate-->
-	<!-- Simple forms get submitted via Django, and verified via the csrf token -->
+	      <!-- <div class = 'container-fluid navbar navbar-default fixed-top'> -->
+        	<div class = 'navbar navbar-default navbar-static-top'>
+						<div class = 'container'>
+						<a href = '/' class = 'navbar-brand'>
+		          	Stratus
+						</a>
+						<button type = 'button' class = 'navbar-toggle'
+							data-toggle = 'collapse' data-target = '.navbar-collapse'>
+							<span class = 'sr-only'> Toggle navigation </span>
+
+							<i class = "glyphicon glyphicon-user"></i>
+
+						</button>
+							<div class = "collapse navbar-collapse navbar-ex1-collapse" id = "LogIn">
+	            	<ul class = 'nav navbar-nav'>
+									<li><a href = "/about">About</a></li>
+	              <!-- This form needs to be relative to actual form again -->
+							 </ul>
+							 {% if form.errors%}
+							 <p class = "error">Sorry we do not recognize that username and password</p>
+		 				 	 {% endif %}
+								 <form action = "gateway/login/" method = "post" class = "navbar-form pull-right" role = "login">{% csrf_token %}
+										<input class = "span2" type = "text" placeholder = "username" name = "username" value = "" id = "username"/>
+
+										<input class = "span2" type = "password" placeholder = "password" name = "password" value = "" id = "password">
+
+										<button class = "btn btn-default" type = "submit" value = "Log In">Log in
+											<i class = "glyphicon glyphicon-user"></i>
+										</button>
+						 			 </div>
+								 </form>
+						 </div>
+            </div>
+					</div>
+
 	<body>
-		<div id="Register">
-			<h2>Register New User</h2>
-			<form action = "/gateway/registration" method = "post">{% csrf_token %}
-		   		<label for = "username">Username</label>
-				<input type = "text" name = "username" value = "" id = "username"/>
-				<label for = "password">Password</label>
-				<input type = "password" name = "password1" value = "" id = "password1">
-				<label for = "password">Confirm</label>
-				<input type = "password" name = "password2" value = "" id = "password2">
+		<div class = 'container'>
+			  <!-- <h2>Register New User</h2> -->
+			    <form action = "/gateway/registration" method = "post">{% csrf_token %}
+            	<div class = "col-sm-8 col-md-6 col-xs-12 pull-right">
+								<div class = "form-group col-md-12 nopadding">
+									<h2>Register New User</h2>
 
-		   		<input type = "submit" value = "Register" />
-	    	</form>
-   		</div>
-   		<div id="Login">
-   			<h2>Log In</h2>
-			{% if form.errors%}
-			<p class = "error">Sorry we do not recognize that username and password</p>
-			{% endif %}
-			<form action = "/gateway/login/" method = "post" >{% csrf_token %}
-				<label for = "username">Username</label>
-				<input type = "text" name = "username" value = "" id = "username"/>
-				<label for = "password">Password</label>
-				<input type = "password" name = "password" value = "" id = "password">
+								<!-- <label class = "form-control"for="username" class="col-xs-3 col-sm-5 col-md-5">Username</label> -->
+                <input class = "form-control col-xs-" type = "text" placeholder = "username" name = "username" value = "" id = "username"/>
 
-				<input type = "submit" value = "Log In">
-			</form>
-		</div>
+								</div>
+								<div class = "form-group col-md-12 nopadding">
+									<!-- <label for="password" class="col-xs-3 col-sm-5 col-md-5">Password</label> -->
+									<input class ="form-control align-right" type = "password" placeholder = "password" name = "password1" value = "" id = "password1">
+								</div>
+								<div class = "form-group col-md-12 nopadding">
+									<!-- <label for="password" class="col-xs-3 col-sm-5 col-md-5">Confirm Password</label> -->
+									<input class = "form-control " type = "password" placeholder= "confirm password"name = "password2" value = "" id = "password2">
+							  </div>
+								<!-- <div class = ""> -->
+								<div class = "form-group col-md-12 nopadding">
+
+									<button class = "btn btn-default pull-right form-control" type = submit value = "Register">Register</button>
+								</div>
+									<!-- <button class = "btn btn-default col-xs-3 col-xs-push-3 col-sm-5 col-sm-push-5 col-md-5 " type = submit value = "Register">Register</button> -->
+								<!-- <input type = "submit" value = "Register" /> -->
+								<!-- </div> -->
+						</form>
+								</div>
+            	</div>
+           </div>
+        </div>
 	</body>
 </html>
-
