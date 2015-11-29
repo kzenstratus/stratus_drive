@@ -7,6 +7,7 @@ Website for centralizing and managing files to various online storage providers.
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
+Discontinued
 ### What is this repository for? ###
 
 * Quick summary
